@@ -356,7 +356,7 @@ const About = () => {
             </div>
           </section>
 
-          <SkinSolutionsSection />
+          
 
 
          <MeetTheTeamSection />
