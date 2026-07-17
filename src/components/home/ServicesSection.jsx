@@ -52,7 +52,7 @@ export default function ServicesSection() {
     >
 
       <div ref={sectionRef}
-      className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28 flex flex-col gap-12 relative">
+      className="w-full max-w-7xl overflow-hidden mx-auto px-4 sm:px-6 py-20 sm:py-28 flex flex-col gap-12 relative">
 
   {/*  Section Heading  */}
       <div className="section-header flex flex-col items-center gap-3 text-center">
@@ -71,7 +71,7 @@ export default function ServicesSection() {
       </div>
 
       {/* ===== Section Content ===== */}
-      <div className="section-content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+      <div className="section-content  overflow-hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
         {services.map(({ img, title, desc }) => (
           <div
             key={title}
