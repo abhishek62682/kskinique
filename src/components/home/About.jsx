@@ -100,7 +100,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="w-full px-2.5 sm:px-12.5 bg-surface">
+    <div className="w-full overflow-x-hidden px-2.5 sm:px-12.5 bg-surface">
       <section className="max-w-full bg-surface-alt space-y-40 rounded-2xl py-30 md:py-50">
 
         {/* ===== Section Header ===== */}
@@ -128,7 +128,7 @@ const About = () => {
         </div>
 
         {/* ===== Section Content ===== */}
-        <div className="section-content w-full overflow-x-hidden   flex items-center justify-center">
+        <div className="section-content w-full    flex items-center justify-center">
           <div
             ref={orbitContainerRef}
             className="relative w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] md:w-[540px] md:h-[540px] lg:w-[700px] lg:h-[700px]"
