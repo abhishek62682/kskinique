@@ -75,7 +75,7 @@ export default function Navbar() {
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
-              className="flex md:hidden items-center justify-center size-9 rounded-full bg-primary-05 text-primary-dark text-[20px] shrink-0"
+              className="flex md:hidden items-center justify-center size-14 rounded-full bg-primary-05 text-primary-dark text-[30px] shrink-0"
             >
               <i className={menuOpen ? "ri-close-line" : "ri-menu-3-line"}></i>
             </button>
