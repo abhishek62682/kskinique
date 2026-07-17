@@ -23,6 +23,30 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll while the sheet is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  // Close on Escape
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
+
+  const navLinks = [
+    ["/", "Home"],
+    ["/about", "About"],
+    ["/services", "Services"],
+    ["/contact", "Contact"],
+  ];
+
   return (
     <>
       <nav
@@ -73,39 +97,71 @@ export default function Navbar() {
 
             {/* mobile: only the hamburger, no crowded button */}
             <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Toggle menu"
+              onClick={() => setMenuOpen(true)}
+              aria-label="Open menu"
+              aria-expanded={menuOpen}
               className="flex md:hidden items-center justify-center size-12 rounded-full bg-primary-05 text-primary-dark text-[24px] shrink-0"
             >
-              <i className={menuOpen ? "ri-close-line" : "ri-menu-3-line"}></i>
+              <i className="ri-menu-3-line"></i>
             </button>
           </div>
 
         </div>
+      </nav>
 
-        {/* MOBILE MENU */}
-        <div
-          className={`md:hidden mx-4 mt-2 rounded-[20px] backdrop-blur-lg bg-surface/90 border border-border overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-[400px] py-5" : "max-h-0 py-0"}`}
-        >
-          <div className="flex flex-col font-secondary px-6 gap-4">
-            {[["/", "Home"], ["/about", "About"], ["/services", "Services"], ["/contact", "Contact"]].map(([href, label]) => (
-              <a
-                key={href}
-                href={href}
-                onClick={() => setMenuOpen(false)}
-                className="text-sm text-text transition-all duration-300 hover:opacity-60"
-              >
-                {label}
-              </a>
-            ))}
+      {/* MOBILE SLIDE SHEET */}
+      {/* Backdrop */}
+      <div
+        onClick={() => setMenuOpen(false)}
+        aria-hidden="true"
+        className={`md:hidden fixed inset-0 z-[400] bg-overlay/50 backdrop-blur-sm transition-opacity duration-300 ${
+          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      />
 
-            <div className="pt-2">
-              <Button label="Book Appointment" bgColor="#261813" textColor="#F7ECDF" />
-            </div>
-          </div>
+      {/* Sheet panel */}
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile menu"
+        className={`md:hidden fixed top-0 right-0 h-full w-[82%] max-w-[340px] z-[500] bg-surface shadow-2xl transition-transform duration-300 ease-out flex flex-col ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Sheet header */}
+        <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-border">
+          <img src="/logo.png" alt="Skinique" className="w-20" />
+          <button
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+            className="flex items-center justify-center size-11 rounded-full bg-primary-05 text-primary-dark text-2xl shrink-0"
+          >
+            <i className="ri-close-line"></i>
+          </button>
         </div>
 
-      </nav>
+        {/* Sheet links */}
+        <div className="flex flex-col font-secondary px-6 py-6 gap-1 overflow-y-auto">
+          {navLinks.map(([href, label], i) => (
+            <a
+              key={href}
+              href={href}
+              onClick={() => setMenuOpen(false)}
+              style={{ transitionDelay: menuOpen ? `${i * 40}ms` : "0ms" }}
+              className={`text-base text-text py-3 border-b border-border/60 last:border-none transition-all duration-300 hover:opacity-60 ${
+                menuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
+              }`}
+            >
+              {label}
+            </a>
+          ))}
+        </div>
+
+        {/* Sheet footer */}
+        <div className="mt-auto px-6 pb-8 pt-4 border-t border-border">
+          <Button label="Book Appointment" bgColor="#261813" textColor="#F7ECDF" />
+        </div>
+      </div>
     </>
   );
 }
