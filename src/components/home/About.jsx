@@ -32,7 +32,7 @@ const About = () => {
 
     const updateRadius = () => {
       const size = container.offsetWidth; // square container, width = height
-      setRadius(size * 0.38 + 50);
+      setRadius(size * 0.38 + 20);
     };
 
     updateRadius();
