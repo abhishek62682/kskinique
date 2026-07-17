@@ -1,0 +1,113 @@
+// DoctorSection.jsx
+import Button from "../ui/Button";
+
+export default function DoctorSection() {
+  const credentials = [
+    {
+      label: "Board certified dermatologist",
+      icon: "https://cdn.prod.website-files.com/6968665112e3574ab21f88a1/696b5ed3c5ac3c0715e38329_icon-11.svg",
+    },
+    {
+      label: "10+ years clinical experience",
+      icon: "https://cdn.prod.website-files.com/6968665112e3574ab21f88a1/696b5fbd9bd7f470dd14df1b_icon-12.svg",
+    },
+    {
+      label: "Advanced aesthetic training",
+      icon: "https://cdn.prod.website-files.com/6968665112e3574ab21f88a1/696b5fbdea866d9ac6f4bc77_icon-13.svg",
+    },
+  ];
+
+  return (
+    <section className="bg-surface w-full px-2.5 sm:px-12.5">
+
+<div className="bg-surface-alt rounded-[30px] px-5  py-20 sm:py-37.5">
+
+
+    <div className="w-full max-w-7xl   mx-auto ">
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+
+          <div className="lg:col-span-5">
+            <div className="relative rounded-[32px] overflow-hidden">
+              <img
+                src="https://framerusercontent.com/images/GxQO8asItSl76Fw0bPEJgPjibvI.jpg?width=810&height=849"
+                className="w-full h-120 sm:h-135 lg:h-150 object-cover object-top"
+                alt="Dr. Kajal Komalan"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-overlay/80 via-overlay/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 px-5 py-5">
+                <div className="bg-white-10 backdrop-blur-md border border-white-10 flex items-center justify-between p-6 rounded-[20px]">
+                  <div className="space-y-0.5">
+                    <p className="text-text-light text-[24px] sm:text-[28px] font-primary font-normal leading-[34px]">
+                      Dr. Kajal Komalan
+                    </p>
+                    <p className="text-text-light/70 text-[13px] font-secondary">
+                      Dermatologist & Aesthetic Specialist
+                    </p>
+                  </div>
+                  <img
+                    src="https://cdn.prod.website-files.com/6968665112e3574ab21f88a1/696b5857e260324cfcb81aaf_icon-14.svg"
+                    className="size-7 opacity-80 shrink-0"
+                    alt="icon"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-7 flex flex-col gap-6 lg:justify-between lg:h-150">
+
+            <div className="flex flex-col gap-6">
+
+              <div className="flex flex-col gap-3">
+                <div className="py-1.5 px-3 flex items-center gap-2.5 rounded-[30px] bg-primary-05 w-fit">
+                  <div className="size-1.5 rounded-full bg-primary-label"></div>
+                  <span className="text-[12px] leading-4 font-medium uppercase text-primary-label font-secondary tracking-wide">
+                    meet the doctor
+                  </span>
+                </div>
+                <h2 className="text-[38px] sm:text-[46px] md:text-[52px] lg:text-[60px] font-primary text-primary-dark leading-none">
+                  Dr. Kajal Komalan
+                </h2>
+                {/* <p className="text-[15px] font-medium text-text-soft font-secondary">
+                  Dermatologist & Aesthetic Specialist
+                </p> */}
+              </div>
+
+              <div className="flex flex-col gap-3">
+                <p className="text-[14px] sm:text-[15px] leading-[1.75] text-text-soft font-secondary">
+                  Board-certified dermatologist with over 20 years of experience in medical and cosmetic dermatology. Specializes in anti-aging treatments, skin cancer prevention, and advanced laser procedures. Published researcher and frequent speaker at dermatology conferences.
+                </p>
+                <p className="text-[14px] sm:text-[15px] leading-[1.75] text-text-soft font-secondary">
+                  Her philosophy is simple: understand the person, treat the skin condition, and enhance natural beauty without compromise.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-4">
+                {credentials.map(({ label, icon }) => (
+                  <div key={label} className="flex items-center gap-4">
+                    <div className="size-11 rounded-full border border-primary/20 bg-primary-05 flex items-center justify-center shrink-0">
+                      <img src={icon} className="size-5.5" alt={label} />
+                    </div>
+                    <span className="text-[15px] font-medium text-primary-dark font-secondary">{label}</span>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+
+            {/* Button pinned to bottom */}
+            <div>
+              <Button label="Book a Consultation" textColor="#fff" bgColor="#986A3E" />
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+</div>
+      
+    
+    </section>
+  );
+}

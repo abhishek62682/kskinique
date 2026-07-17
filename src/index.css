@@ -1,0 +1,111 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+
+
+@import "tailwindcss";
+
+body{
+  background-color: #FDF7EF;
+}
+
+@theme{
+  --font-primary:"Hedvig Letters Serif", serif;
+  --font-secondary:"Inter", sans-serif;
+   
+/* Brand */
+  --color-primary: #986A3E;
+  --color-primary-dark: #633B2C;
+  --color-primary-label: #70441B;
+
+  /* Backgrounds */
+  --color-surface: #FDF7EF;
+  --color-surface-alt: #F7ECDF;
+  --color-white: #FFFFFF;
+  --color-transparent: transparent;
+
+  /* Text */
+  --color-text: #101011;
+  --color-text-secondary: #2B2B2C;
+  --color-text-muted: #606266;
+  --color-text-light: #FFFFFF;
+  --color-text-soft: #7A685D;
+
+  /* Borders */
+  --color-border: #986A3E1A;
+  --color-border-dark: #633B2C1A;
+
+  /* Overlay */
+  --color-overlay: #261813;
+  --color-overlay-light: #FFFFFF1A;
+
+  /* Primary Opacity */
+  --color-primary-80: #986A3ECC;
+  --color-primary-60: #986A3E99;
+  --color-primary-50: #986A3E80;
+  --color-primary-10: #986A3E1A;
+  --color-primary-05: #986A3E0F;
+
+  /* Dark Opacity */
+  --color-primary-dark-50: #633B2C80;
+
+  /* White Opacity */
+  --color-white-40: #FFFFFF66;
+  --color-white-10: #FFFFFF1A;
+}
+
+
+
+
+
+.bg-gradient-3 {
+  background: linear-gradient(
+    90deg,
+    
+    #0d3c40 12.91%,
+    #1b7076 100.5%
+  );
+}
+
+
+
+
+.bg-gradient {
+  background: linear-gradient(
+    180deg,
+    #ffffff00 0.45%,
+    #986a3e80 50%,
+    #986a3e80 100%
+  );
+  backdrop-filter: blur(16px);
+}
+
+
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+  width: max-content;
+}
+
+.swiper{
+  width:100%;
+}
+
+.swiper-slide{
+  height:100% !important;
+}
+
+
+/* linear-gradient(90deg, #67121e 12.91%, #bb4253 100.5%); */
+
+
+
