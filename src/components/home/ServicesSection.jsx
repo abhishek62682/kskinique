@@ -71,7 +71,7 @@ export default function ServicesSection() {
       </div>
 
       {/* ===== Section Content ===== */}
-      <div className="section-content  overflow-hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+      <div className="section-content  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
         {services.map(({ img, title, desc }) => (
           <div
             key={title}
