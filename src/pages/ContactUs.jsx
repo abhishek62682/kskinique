@@ -4,10 +4,11 @@
 // Location Map
 // Frequently Asked Questions (FAQ) (Optional)
 
-import PageBanner from "../components/common/PageBanner"
+
 import ContactSection from "../components/contact/ContactSection"
 import FaqSection from "../components/home/FaqSection"
 import CtaSection from "../components/home/CtaSection"
+import PageHero from "../components/common/PageHero"
 
 
 
@@ -15,13 +16,16 @@ const ContactUs = () => {
   return (
      <div className="page-content bg-surface-light relative z-[10] ">
 
-     <PageBanner
-      title="Contact Us"
-      breadcrumbs={[
-        { label: "Home", href: "/" },
-        { label: "Contact Us" },
-      ]}
-    />
+    <PageHero
+  badgeText="Get In Touch"
+  heading={
+    <>
+      Let's talk about your <span className="text-primary-label">skin</span> goals.
+    </>
+  }
+  description="Have a question or ready to book a consultation? Reach out and our team will get back to you shortly."
+  descriptionMaxWidth="max-w-[560px]"
+/>
 
 
     <div className="spacer ">

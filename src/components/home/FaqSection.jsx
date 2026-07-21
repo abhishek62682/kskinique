@@ -65,7 +65,7 @@ function FaqItem({ q, a }) {
 
 export default function FaqSection() {
   return (
-    <section className="w-full bg-surface">
+    <section className="w-full bg-surface-alt">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-20">
 
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-14">
@@ -88,7 +88,7 @@ export default function FaqSection() {
                 Everything you need to know before your first visit. Can't find an answer? Just reach out.
               </p>
 
-              <Button label="Ask Us Anything"  />
+              <Button label="Ask Us Anything" bgColor="#986a3e" textColor="#fff"  />
 
             </div>
           </div>

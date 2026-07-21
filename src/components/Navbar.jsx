@@ -43,7 +43,7 @@ export default function Navbar() {
   const navLinks = [
     ["/", "Home"],
     ["/about", "About"],
-    ["/services", "Services"],
+    ["/service", "Services"],
     ["/contact", "Contact"],
   ];
 
@@ -67,7 +67,7 @@ export default function Navbar() {
             </div>
 
             <div className="hidden md:flex gap-6 font-secondary">
-              {[["/", "Home"], ["/about", "About"], ["#services", "Services"], ["/contact", "Contact"]].map(([href, label]) => (
+              {[["/", "Home"], ["/about", "About"], ["/service", "Service"], ["/contact", "Contact"]].map(([href, label]) => (
                 <a
                   key={href}
                   href={href}

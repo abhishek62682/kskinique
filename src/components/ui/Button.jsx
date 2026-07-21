@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const Button = ({ bgColor = "#f7ecdf", textColor, label = "Book Appointment" }) => {
   return (
@@ -16,7 +16,7 @@ const Button = ({ bgColor = "#f7ecdf", textColor, label = "Book Appointment" }) 
         />
       </div>
 
-      <span className="relative z-10 text-[14px] font-medium transition-colors duration-200 group-hover:text-brand">
+      <span className="relative z-10 text-[14px] font-medium transition-colors duration-200 group-hover:!text-black">
         {label}
       </span>
     </a>

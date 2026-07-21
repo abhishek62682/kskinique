@@ -32,13 +32,13 @@ function UspSection() {
   ];
 
   return (
-    <div className="w-full bg-surface-light relative">
+    <section className="w-full bg-surface relative">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 pb-20 sm:pb-28">
         <div className="flex flex-col items-center text-center gap-4 mb-16 sm:mb-20">
-          <h2 className="text-[38px] sm:text-[46px] md:text-[52px] font-primary text-brand leading-none">
+          <h2 className="text-[38px] sm:text-[46px] md:text-[52px] font-primary text-primary-dark leading-none">
             How we care for you
           </h2>
-          <p className="text-[14px] sm:text-[15px] leading-[1.75] text-brand/60 font-secondary max-w-xl">
+          <p className="text-[14px] sm:text-[15px] leading-[1.75] text-text-soft font-secondary max-w-xl">
             We combine advanced dermatology with aesthetic expertise to deliver results that look natural, feel confident, and support long-term skin health.
           </p>
         </div>
@@ -50,14 +50,14 @@ function UspSection() {
                 key={idx}
                 className="flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left"
               >
-                <div className="size-14 shrink-0 rounded-2xl bg-brand/[0.06] flex items-center justify-center">
-                  <item.icon className="size-6 text-brand" strokeWidth={1.5} />
+                <div className="size-14 shrink-0 rounded-2xl bg-primary-05 flex items-center justify-center">
+                  <item.icon className="size-6 text-primary-dark" strokeWidth={1.5} />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <h4 className="text-[17px] sm:text-[18px] font-primary text-brand leading-tight">
+                  <h4 className="text-[17px] sm:text-[18px] font-primary text-primary-dark leading-tight">
                     {item.title}
                   </h4>
-                  <p className="text-[13px] sm:text-[14px] leading-[1.7] text-brand/60 font-secondary">
+                  <p className="text-[13px] sm:text-[14px] leading-[1.7] text-text-soft font-secondary">
                     {item.description}
                   </p>
                 </div>
@@ -81,14 +81,14 @@ function UspSection() {
                 key={idx}
                 className="flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left"
               >
-                <div className="size-14 shrink-0 rounded-2xl bg-brand/[0.06] flex items-center justify-center">
-                  <item.icon className="size-6 text-brand" strokeWidth={1.5} />
+                <div className="size-14 shrink-0 rounded-2xl bg-primary-05 flex items-center justify-center">
+                  <item.icon className="size-6 text-primary-dark" strokeWidth={1.5} />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <h4 className="text-[17px] sm:text-[18px] font-primary text-brand leading-tight">
+                  <h4 className="text-[17px] sm:text-[18px] font-primary text-primary-dark leading-tight">
                     {item.title}
                   </h4>
-                  <p className="text-[13px] sm:text-[14px] leading-[1.7] text-brand/60 font-secondary">
+                  <p className="text-[13px] sm:text-[14px] leading-[1.7] text-text-soft font-secondary">
                     {item.description}
                   </p>
                 </div>
@@ -97,7 +97,7 @@ function UspSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

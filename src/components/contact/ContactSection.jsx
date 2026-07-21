@@ -34,6 +34,7 @@ export default function ContactSection() {
     email: "",
     message: "",
   });
+  const [mapActive, setMapActive] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -45,21 +46,21 @@ export default function ContactSection() {
   };
 
   return (
-    <div className="w-full ">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28">
+    <section className="w-full bg-surface">
+      <div className="w-full max-w-7xl  mx-auto px-4 sm:px-6 py-20 sm:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 rounded-[32px] overflow-hidden">
 
           {/* left info panel */}
-          <div className="lg:col-span-5 bg-brand px-8 sm:px-10 py-12 sm:py-14 flex flex-col justify-between gap-10">
+          <div className="lg:col-span-5 bg-primary-dark px-8 sm:px-10 py-12 sm:py-14 flex flex-col justify-between gap-10">
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-3">
-                <div className="py-1.5 px-3 flex items-center gap-2.5 rounded-[30px] bg-surface/10 w-fit">
-                  <div className="size-1.5 rounded-full bg-surface"></div>
-                  <span className="text-[12px] leading-4 font-medium uppercase text-surface font-secondary tracking-wide">
+                <div className="py-1.5 px-3 flex items-center gap-2.5 rounded-[30px] bg-text-light/10 w-fit">
+                  <div className="size-1.5 rounded-full bg-text-light"></div>
+                  <span className="text-[12px] leading-4 font-medium uppercase text-text-light font-secondary tracking-wide">
                     get in touch
                   </span>
                 </div>
-                <h2 className="text-[32px] sm:text-[38px] font-primary text-surface leading-none">
+                <h2 className="text-[32px] sm:text-[38px] font-primary text-text-light leading-none">
                   Contact us
                 </h2>
               </div>
@@ -68,16 +69,16 @@ export default function ContactSection() {
                 {contactItems.map((item, i) => (
                   <div key={item.title} className="relative flex gap-5">
                     {i < contactItems.length - 1 && (
-                      <span className="absolute left-[21px] top-[48px] h-[calc(100%+32px-48px)] w-px border-l border-dashed border-surface/25" />
+                      <span className="absolute left-[21px] top-[48px] h-[calc(100%+32px-48px)] w-px border-l border-dashed border-text-light/25" />
                     )}
-                    <div className="relative z-10 size-[44px] rounded-full border border-surface/20 bg-surface/10 flex items-center justify-center shrink-0">
-                      <i className={`${item.icon} text-[20px] text-surface`}></i>
+                    <div className="relative z-10 size-[44px] rounded-full border border-text-light/20 bg-text-light/10 flex items-center justify-center shrink-0">
+                      <i className={`${item.icon} text-[20px] text-text-light`}></i>
                     </div>
                     <div className="flex flex-col gap-1">
-                      <h3 className="text-[16px] font-medium text-surface font-secondary">
+                      <h3 className="text-[16px] font-medium text-text-light font-secondary">
                         {item.title}
                       </h3>
-                      <p className="max-w-sm text-[14px] leading-[1.7] text-surface/70 font-secondary">
+                      <p className="max-w-sm text-[14px] leading-[1.7] text-text-light/70 font-secondary">
                         {item.content}
                       </p>
                     </div>
@@ -92,17 +93,17 @@ export default function ContactSection() {
                 <a
                   key={social.icon}
                   href={social.href}
-                  className="size-[40px] rounded-full border border-surface/20 bg-surface/10 flex items-center justify-center hover:bg-surface/20 transition"
+                  className="size-[40px] rounded-full border border-text-light/20 bg-text-light/10 flex items-center justify-center hover:bg-text-light/20 transition"
                 >
-                  <i className={`${social.icon} text-[18px] text-surface`}></i>
+                  <i className={`${social.icon} text-[18px] text-text-light`}></i>
                 </a>
               ))}
             </div>
           </div>
 
           {/* right form panel */}
-          <div className="lg:col-span-7 bg-surface px-8 sm:px-10 py-12 sm:py-14 flex flex-col gap-6">
-            <h2 className="text-[28px] sm:text-[32px] font-primary text-brand leading-none">
+          <div className="lg:col-span-7 bg-primary-05 px-8 sm:px-10 py-12 sm:py-14 flex flex-col gap-6">
+            <h2 className="text-[28px] sm:text-[32px] font-primary text-primary-dark leading-none">
               Get in touch
             </h2>
 
@@ -114,7 +115,7 @@ export default function ContactSection() {
                   placeholder="Name"
                   value={form.name}
                   onChange={handleChange}
-                  className="w-full rounded-[14px] bg-brand/[0.06] border border-brand/10 px-4 py-3.5 text-[14px] font-secondary text-brand placeholder:text-brand/50 outline-none focus:border-brand/30 transition"
+                  className="w-full rounded-[14px] bg-primary-05 border border-primary-dark/10 px-4 py-3.5 text-[14px] font-secondary text-primary-dark placeholder:text-primary-dark/50 outline-none focus:border-primary-dark/30 transition"
                 />
                 <input
                   type="tel"
@@ -122,7 +123,7 @@ export default function ContactSection() {
                   placeholder="Contact Number"
                   value={form.contact}
                   onChange={handleChange}
-                  className="w-full rounded-[14px] bg-brand/[0.06] border border-brand/10 px-4 py-3.5 text-[14px] font-secondary text-brand placeholder:text-brand/50 outline-none focus:border-brand/30 transition"
+                  className="w-full rounded-[14px] bg-primary-05 border border-primary-dark/10 px-4 py-3.5 text-[14px] font-secondary text-primary-dark placeholder:text-primary-dark/50 outline-none focus:border-primary-dark/30 transition"
                 />
               </div>
 
@@ -132,7 +133,7 @@ export default function ContactSection() {
                 placeholder="Email Address"
                 value={form.email}
                 onChange={handleChange}
-                className="w-full rounded-[14px] bg-brand/[0.06] border border-brand/10 px-4 py-3.5 text-[14px] font-secondary text-brand placeholder:text-brand/50 outline-none focus:border-brand/30 transition"
+                className="w-full rounded-[14px] bg-primary-05 border border-primary-dark/10 px-4 py-3.5 text-[14px] font-secondary text-primary-dark placeholder:text-primary-dark/50 outline-none focus:border-primary-dark/30 transition"
               />
 
               <textarea
@@ -141,11 +142,11 @@ export default function ContactSection() {
                 rows={5}
                 value={form.message}
                 onChange={handleChange}
-                className="w-full resize-none rounded-[14px] bg-brand/[0.06] border border-brand/10 px-4 py-3.5 text-[14px] font-secondary text-brand placeholder:text-brand/50 outline-none focus:border-brand/30 transition"
+                className="w-full resize-none rounded-[14px] bg-primary-05 border border-primary-dark/10 px-4 py-3.5 text-[14px] font-secondary text-primary-dark placeholder:text-primary-dark/50 outline-none focus:border-primary-dark/30 transition"
               />
 
-              <label className="flex w-fit items-center gap-3 rounded-[14px] border border-brand/10 bg-brand/[0.06] px-4 py-3.5 text-[14px] font-secondary text-brand">
-                <input type="checkbox" className="h-4 w-4 accent-brand" />
+              <label className="flex w-fit items-center gap-3 rounded-[14px] border border-primary-dark/10 bg-primary-05 px-4 py-3.5 text-[14px] font-secondary text-primary-dark">
+                <input type="checkbox" className="h-4 w-4 accent-primary-dark" />
                 I'm not a robot
               </label>
 
@@ -153,8 +154,8 @@ export default function ContactSection() {
                 <Button
                   type="submit"
                   label="Send Your Message"
-                  bgColor="#09292b"
-                  textColor="#f7ecdf"
+                  bgColor="#986a3e"
+                  textColor="#fff"
                 />
               </div>
             </form>
@@ -162,20 +163,34 @@ export default function ContactSection() {
 
         </div>
 
-        {/* full-width google map, grayscale style */}
-<div className="mt-8 rounded-[32px] overflow-hidden border border-brand/10">
-  <iframe
-    src="https://www.google.com/maps?cid=17611080526173218198&output=embed"
-    className="w-full h-[420px] sm:h-[480px] "
-    style={{ border: 0 }}
-    allowFullScreen=""
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-    title="Skinique - Dr. Kajal Komalan location"
-  ></iframe>
-</div>
+        {/* full-width google map, scroll-safe (click to activate) */}
+        <div
+          className="relative mt-8 rounded-[32px] overflow-hidden border border-primary-dark/10"
+          onMouseLeave={() => setMapActive(false)}
+        >
+          <iframe
+            src="https://www.google.com/maps?cid=17611080526173218198&output=embed"
+            className="w-full h-[420px] sm:h-[480px]"
+            style={{ border: 0, pointerEvents: mapActive ? "auto" : "none" }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Skinique - Dr. Kajal Komalan location"
+          ></iframe>
+
+          {!mapActive && (
+            <div
+              onClick={() => setMapActive(true)}
+              className="absolute inset-0 flex items-center justify-center bg-primary-dark/5 hover:bg-primary-dark/10 transition cursor-pointer"
+            >
+              <span className="rounded-full bg-primary-dark/90 text-text-light text-[13px] font-secondary px-4 py-2">
+                Click to interact with map
+              </span>
+            </div>
+          )}
+        </div>
 
       </div>
-    </div>
+    </section>
   );
 }
