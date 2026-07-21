@@ -3,7 +3,7 @@
 import UspSection from "../components/home/UspSection";
 
 import OurStorySection from "../components/about/OurStorySection";
-import DoctorSection from "../components/about/DoctorSection";
+import DoctorSection from "../components/about/Doctorsection";
 import StatsSection from "../components/about/StatsSection";
 import MeetTheTeamSection from "../components/about/MeetTheTeamSection";
 
