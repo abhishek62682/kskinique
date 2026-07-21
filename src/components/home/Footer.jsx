@@ -3,7 +3,7 @@ import Button from '../ui/Button'
 const Footer = () => {
   return (
     <footer className="footer bg-primary-dark">
-      <div className="w-full max-w-7xl mx-auto flex flex-col gap-16 px-4 sm:px-6 py-30">
+      <div className="w-full max-w-7xl mx-auto flex flex-col gap-16 px-4 sm:px-6 pt-30 pb-10">
 
         <div className="flex flex-col items-center text-center gap-8">
           <h2 className="font-primary text-surface text-[28px] sm:text-[36px] md:text-[42px] font-normal leading-[1.2]">
