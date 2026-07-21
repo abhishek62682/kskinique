@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Button from "./ui/Button";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [hidden, setHidden] = useState(false);
@@ -68,13 +69,14 @@ export default function Navbar() {
 
             <div className="hidden md:flex gap-6 font-secondary">
               {[["/", "Home"], ["/about", "About"], ["/service", "Service"], ["/contact", "Contact"]].map(([href, label]) => (
-                <a
+                <Link
+                to={href}
                   key={href}
-                  href={href}
+                 
                   className="text-sm text-text transition-all duration-300 hover:opacity-60"
                 >
                   {label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -143,9 +145,10 @@ export default function Navbar() {
         {/* Sheet links */}
         <div className="flex flex-col font-secondary px-6 py-6 gap-1 overflow-y-auto">
           {navLinks.map(([href, label], i) => (
-            <a
+            <Link
+            to={href}
               key={href}
-              href={href}
+              
               onClick={() => setMenuOpen(false)}
               style={{ transitionDelay: menuOpen ? `${i * 40}ms` : "0ms" }}
               className={`text-base text-text py-3 border-b border-border/60 last:border-none transition-all duration-300 hover:opacity-60 ${
@@ -153,7 +156,7 @@ export default function Navbar() {
               }`}
             >
               {label}
-            </a>
+            </Link>
           ))}
         </div>
 

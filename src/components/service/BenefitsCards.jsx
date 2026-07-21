@@ -20,7 +20,7 @@ export default function BenefitsCards() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
 
           {/* Card 1: Board-certified experts */}
-          <div className="rounded-[24px] bg-primary-05 flex flex-col items-center text-center px-7 pt-9 pb-8 gap-6">
+          <div className="rounded-3xl bg-primary-05 flex flex-col items-center text-center px-7 pt-9 pb-8 gap-6">
             <h3 className="text-[24px] sm:text-[26px] font-primary text-primary-dark leading-tight">
               Board-certified experts
             </h3>
